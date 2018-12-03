@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mqtt — 消息队列遥测传输 &mdash; makeblock micropython 文档说明 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="神经元扩展模块的python接口列表" href="../neurons_modules/index.html" />
+    <link rel="prev" title="urequests — 网络请求模块" href="urequests.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> makeblock micropython 文档说明
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">程小奔的python接口</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id1">小程的python接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id2">小奔的python接口</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id3">第三方类库的python接口</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">第三方类库的python接口列表</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="urequests.html"><code class="docutils literal notranslate"><span class="pre">urequests</span></code> — 网络请求模块</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">mqtt</span></code> — 消息队列遥测传输</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id4">神经元扩展模块的python接口</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">程小奔的实例教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../library/index.html">microPython 官方类库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">microPython 语言介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genrst/index.html">microPython 和 python 的差异</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">microPython 许可证信息</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">makeblock micropython 文档说明</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">程小奔的python接口</a> &raquo;</li>
+        
+          <li><a href="index.html">第三方类库的python接口列表</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">mqtt</span></code> — 消息队列遥测传输</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/codey&amp;rocky/Third-party-libraries/mqtt.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mqtt">
+<span id="mqtt"></span><h1><a class="reference internal" href="#module-mqtt" title="mqtt: 消息队列遥测传输"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mqtt</span></code></a> — 消息队列遥测传输<a class="headerlink" href="#module-mqtt" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">mqtt</span></code> 模块的主要功能与函数</p>
+<div class="section" id="id1">
+<h2>功能相关函数<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mqtt.MQTTClient">
+<em class="property">class </em><code class="descclassname">mqtt.</code><code class="descname">MQTTClient</code><span class="sig-paren">(</span><em>client_id</em>, <em>server</em>, <em>port=0</em>, <em>user=None</em>, <em>password=None</em>, <em>keepalive=0</em>, <em>ssl=False</em>, <em>ssl_params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>实例化MQTT客户端的接口对象，参数:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>client_id</em> 连接到代理时使用的唯一客户端ID字符串，如果client_id为零长度或无，则将随机生成一个。在这种情况下，<code class="docutils literal notranslate"><span class="pre">connect</span></code> 函数的clean_session参数必须为True。</li>
+<li><em>server</em> 远程服务器的主机名或IP地址。</li>
+<li><a href="#id2"><span class="problematic" id="id3">*</span></a>port*（可选）要连接的服务器主机的网络端口。 默认为1883，请注意，MQTT over SSL / TLS的默认端口是8883。</li>
+<li><a href="#id4"><span class="problematic" id="id5">*</span></a>user*（可选）在服务器上注册的用户名。</li>
+<li><a href="#id6"><span class="problematic" id="id7">*</span></a>password*（可选）在服务器上注册的密码。</li>
+<li><a href="#id8"><span class="problematic" id="id9">*</span></a>keepalive*（可选）客户端的keepalive超时值。 默认为60秒。</li>
+<li><a href="#id10"><span class="problematic" id="id11">*</span></a>ssl*（可选）是否使能 SSL/TLS 支持。</li>
+<li><a href="#id12"><span class="problematic" id="id13">*</span></a>ssl_params*（可选）SSL/TLS 参数。</li>
+</ul>
+<dl class="method">
+<dt id="mqtt.MQTTClient.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>clean_session=True</em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>将客户端连接到服务器。 这是一个阻塞函数，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>clean_session</em> 一个确定客户端类型的布尔值。 如果为 <code class="docutils literal notranslate"><span class="pre">True</span></code>，服务器将在断开连接时删除有关此客户端的所有信息。 如果为 <code class="docutils literal notranslate"><span class="pre">False</span></code>，则客户端是持久客户端，并且当客户端断开连接时，将保留订阅信息和排队消息。</li>
+</ul>
+<dl class="method">
+<dt id="mqtt.MQTTClient.reconnect">
+<code class="descname">reconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.reconnect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>使用先前提供的详细信息重新连接到服务器。 在调用此函数之前，您必须调用 <code class="docutils literal notranslate"><span class="pre">connect</span></code>。</p>
+<blockquote>
+<div><dl class="method">
+<dt id="mqtt.MQTTClient.disconnect">
+<code class="descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>与服务器断开连接。</p>
+<blockquote>
+<div><dl class="method">
+<dt id="mqtt.MQTTClient.ping">
+<code class="descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.ping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>测试客户端与服务器的连通性。</p>
+<blockquote>
+<div><dl class="method">
+<dt id="mqtt.MQTTClient.set_last_will">
+<code class="descname">set_last_will</code><span class="sig-paren">(</span><em>topic</em>, <em>msg</em>, <em>retain=False</em>, <em>qos=0</em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.set_last_will" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>设置要发送给服务器的遗嘱。 如果客户端断开而没有调用 <code class="docutils literal notranslate"><span class="pre">disconnect()</span></code>，服务器将代表它发布消息。</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>topic</em> 该遗嘱消息发布的主题。</li>
+<li><em>msg</em> 要发送的遗嘱消息。</li>
+<li><em>retain</em> 如果设置为 <code class="docutils literal notranslate"><span class="pre">True</span></code>，遗嘱消息将被设置为该主题的 <code class="docutils literal notranslate"><span class="pre">最后已知良好</span></code> /保留消息。</li>
+<li><em>qos</em> 用于遗嘱的服务质量等级。</li>
+</ul>
+<dl class="method">
+<dt id="mqtt.MQTTClient.publish">
+<code class="descname">publish</code><span class="sig-paren">(</span><em>topic</em>, <em>msg</em>, <em>retain=False</em>, <em>qos=0</em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.publish" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>从客户端向代理发送消息，然后从代理发送到订阅匹配主题的任何客户端。 参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>topic</em> 应该发布消息的主题。</li>
+<li><em>msg</em> 要发送的实际消息。</li>
+<li><em>retain</em> 如果设置为 <code class="docutils literal notranslate"><span class="pre">True</span></code>，遗嘱消息将被设置为该主题的 <code class="docutils literal notranslate"><span class="pre">最后已知良好</span></code> /保留消息。</li>
+<li><em>qos</em> 要使用的服务质量水平。</li>
+</ul>
+<dl class="method">
+<dt id="mqtt.MQTTClient.subscribe">
+<code class="descname">subscribe</code><span class="sig-paren">(</span><em>topic</em>, <em>qos=0</em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>订阅服务的某个主题，该模块提供了一些辅助函数，可以直接订阅和处理消息。例如 <code class="docutils literal notranslate"><span class="pre">set_callback</span></code>。</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>topic</em> 要订阅消息的主题。</li>
+<li><em>qos</em> 要使用的服务质量水平。</li>
+</ul>
+<dl class="method">
+<dt id="mqtt.MQTTClient.set_callback">
+<code class="descname">set_callback</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.set_callback" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>设置主题订阅的回调函数，当服务器响应我们的订阅请求时调用。参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>f</em> 回调函数。</li>
+</ul>
+<dl class="method">
+<dt id="mqtt.MQTTClient.wait_msg">
+<code class="descname">wait_msg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.wait_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>等待服务器直到服务器无待处理消息。该函数是阻塞函数。</p>
+<blockquote>
+<div><dl class="method">
+<dt id="mqtt.MQTTClient.check_msg">
+<code class="descname">check_msg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MQTTClient.check_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>检查服务器是否有待处理消息。如果没有，直接返回，如果有的话，同 <code class="docutils literal notranslate"><span class="pre">wait_msg</span></code> 的处理。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id14">
+<h2>程序示例：<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mqtt</span> <span class="kn">import</span> <span class="n">MQTTClient</span>
+<span class="kn">import</span> <span class="nn">codey</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">MQTTHOST</span> <span class="o">=</span> <span class="s2">&quot;mq.makeblock.com&quot;</span>
+<span class="n">MQTTPORT</span> <span class="o">=</span> <span class="mi">1883</span>
+
+<span class="c1"># 任意填写</span>
+<span class="n">client_id</span> <span class="o">=</span> <span class="s2">&quot;20180911203800&quot;</span>
+
+<span class="c1"># 示例</span>
+<span class="n">Topic</span> <span class="o">=</span> <span class="s2">&quot;/sensors/temperature/#&quot;</span>
+
+<span class="n">mqttClient</span> <span class="o">=</span> <span class="n">MQTTClient</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">MQTTHOST</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">MQTTPORT</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="n">keepalive</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="c1"># 连接MQTT服务器</span>
+<span class="k">def</span> <span class="nf">on_mqtt_connect</span><span class="p">():</span>
+    <span class="n">mqttClient</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="c1"># 发布消息</span>
+<span class="k">def</span> <span class="nf">on_publish</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">retain</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">qos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">mqttClient</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">qos</span><span class="p">)</span>
+
+<span class="c1"># 消息处理函数</span>
+<span class="k">def</span> <span class="nf">on_message_come</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">topic</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
+    <span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="c1"># subscribe 消息</span>
+<span class="k">def</span> <span class="nf">on_subscribe</span><span class="p">():</span>
+    <span class="n">mqttClient</span><span class="o">.</span><span class="n">set_callback</span><span class="p">(</span><span class="n">on_message_come</span><span class="p">)</span>
+    <span class="n">mqttClient</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">Topic</span><span class="p">,</span> <span class="n">qos</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 此处填入自己家的wiif账户和密码</span>
+<span class="n">codey</span><span class="o">.</span><span class="n">wifi</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;wifi_ssid&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>
+<span class="n">codey</span><span class="o">.</span><span class="n">led</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">codey</span><span class="o">.</span><span class="n">wifi</span><span class="o">.</span><span class="n">is_connected</span><span class="p">():</span>
+        <span class="n">on_mqtt_connect</span><span class="p">()</span>
+        <span class="n">on_subscribe</span><span class="p">()</span>
+        <span class="n">codey</span><span class="o">.</span><span class="n">led</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="c1"># Blocking wait for message</span>
+            <span class="n">on_publish</span><span class="p">(</span><span class="s2">&quot;/sensors/temperature/home&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="mi">38</span><span class="p">),</span> <span class="n">qos</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">mqttClient</span><span class="o">.</span><span class="n">wait_msg</span><span class="p">()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">codey</span><span class="o">.</span><span class="n">led</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../neurons_modules/index.html" class="btn btn-neutral float-right" title="神经元扩展模块的python接口列表" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="urequests.html" class="btn btn-neutral" title="urequests — 网络请求模块" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2018, Damien P. George, Paul Sokolovsky, Yan Minge and contributors, Translators are meixiang dong, stephanie wu, eleven wang
+      Last updated on 03 Dec 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest/makeblock">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+        <dd><a href="//en/latest/micropython-makeblock.pdf">PDF</a></dd>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://www.micropython.org">micropython.org</a>
+        </dd>
+        <dd>
+          <a href="https://gitee.com/makeblockcc/micropython-api-doc">doc git</a>
+        </dd>
+    </dl>
+  </div>
+</div>
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

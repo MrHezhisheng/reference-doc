@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>motion — 小奔底盘移动 &mdash; makeblock micropython 文档说明 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="color_ir_sensor — 颜色红外传感器" href="color&amp;ir sensor.html" />
+    <link rel="prev" title="小奔的python接口列表" href="index.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> makeblock micropython 文档说明
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">程小奔的python接口</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id1">小程的python接口</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id2">小奔的python接口</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">小奔的python接口列表</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">motion</span></code> — 小奔底盘移动</a></li>
+<li class="toctree-l4"><a class="reference internal" href="color&amp;ir sensor.html"><code class="docutils literal notranslate"><span class="pre">color_ir_sensor</span></code> — 颜色红外传感器</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id3">第三方类库的python接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id4">神经元扩展模块的python接口</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">程小奔的实例教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../library/index.html">microPython 官方类库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">microPython 语言介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genrst/index.html">microPython 和 python 的差异</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">microPython 许可证信息</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">makeblock micropython 文档说明</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">程小奔的python接口</a> &raquo;</li>
+        
+          <li><a href="index.html">小奔的python接口列表</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">motion</span></code> — 小奔底盘移动</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/codey&amp;rocky/rocky/motion.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-rocky">
+<span id="motion"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">motion</span></code> — 小奔底盘移动<a class="headerlink" href="#module-rocky" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">motion</span></code> 模块的主要功能与函数(因为是系统函数，所以使用时不需要带模块名称)</p>
+<div class="section" id="id1">
+<h2>功能相关函数<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="rocky.stop">
+<code class="descclassname">rocky.</code><code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rocky.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>小奔停止运动。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rocky.forward">
+<code class="descclassname">rocky.</code><code class="descname">forward</code><span class="sig-paren">(</span><em>speed</em>, <em>t = None</em>, <em>straight = False</em><span class="sig-paren">)</span><a class="headerlink" href="#rocky.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>小奔向前运动，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>speed</em> 运动速度的数值，参数范围 <code class="docutils literal notranslate"><span class="pre">-100</span> <span class="pre">~</span> <span class="pre">100</span></code>，负数代表后退，正数代表前进。</li>
+<li><em>t</em> 运动时间的数值，单位为 <code class="docutils literal notranslate"><span class="pre">秒</span></code>，参数范围 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">数值范围极限</span></code>，如果设置为 1，代表小车往前运动 1s就会停下来。 如果不设置该参数，在没有停止运动或者新的运动指令之前，维持前进状态。</li>
+<li><em>straight</em> 是否使能陀螺仪对行进方向的校正，如果不设置该参数，则默认不启用。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="rocky.backward">
+<code class="descclassname">rocky.</code><code class="descname">backward</code><span class="sig-paren">(</span><em>speed</em>, <em>t = None</em>, <em>straigh = False</em><span class="sig-paren">)</span><a class="headerlink" href="#rocky.backward" title="Permalink to this definition">¶</a></dt>
+<dd><p>小奔向后运动，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>speed</em> 运动速度的数值，参数范围 <code class="docutils literal notranslate"><span class="pre">-100</span> <span class="pre">~</span> <span class="pre">100</span></code>，负数代表前进，正数代表后退。</li>
+<li><em>t</em> 运动时间的数值，单位为 <code class="docutils literal notranslate"><span class="pre">秒</span></code>，参数范围 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">数值范围极限</span></code>，如果设置为 1，代表小车往后运动 1s就会停下来。 如果不设置该参数，在没有停止运动或者新的运动指令之前，维持后退状态。</li>
+<li><em>straight</em> 是否使能陀螺仪对行进方向的校正，如果不设置该参数，则默认不启用。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="rocky.turn_left">
+<code class="descclassname">rocky.</code><code class="descname">turn_left</code><span class="sig-paren">(</span><em>speed</em>, <em>t = None</em><span class="sig-paren">)</span><a class="headerlink" href="#rocky.turn_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>小奔向左转，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>speed</em> 转向快慢程度的数值，参数范围 <code class="docutils literal notranslate"><span class="pre">-100</span> <span class="pre">~</span> <span class="pre">100</span></code>，负数代表右转，正数代表左转。</li>
+<li><em>t</em> 运动时间的数值，单位为 <code class="docutils literal notranslate"><span class="pre">秒</span></code>，参数范围 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">数值范围极限</span></code>，如果设置为 1，代表小车左转 1s就会停下来。
+如果不设置该参数，在没有停止运动或者新的运动指令之前，维持左转状态。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="rocky.turn_right">
+<code class="descclassname">rocky.</code><code class="descname">turn_right</code><span class="sig-paren">(</span><em>speed</em>, <em>t = None</em><span class="sig-paren">)</span><a class="headerlink" href="#rocky.turn_right" title="Permalink to this definition">¶</a></dt>
+<dd><p>小奔向右转，参数：</p>
+<ul class="simple">
+<li><em>speed</em> 转向快慢程度的数值，参数范围 <code class="docutils literal notranslate"><span class="pre">-100</span> <span class="pre">~</span> <span class="pre">100</span></code>，负数代表左转，正数代表右转。</li>
+<li><em>t</em> 运动时间的数值，单位为 <code class="docutils literal notranslate"><span class="pre">秒</span></code>，参数范围 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">数值范围极限</span></code>，如果设置为 1，代表小车右转 1s就会停下来。 如果不设置该参数，在没有停止运动或者新的运动指令之前，维持右转状态。</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="rocky.drive">
+<code class="descclassname">rocky.</code><code class="descname">drive</code><span class="sig-paren">(</span><em>left_power</em>, <em>right_power</em><span class="sig-paren">)</span><a class="headerlink" href="#rocky.drive" title="Permalink to this definition">¶</a></dt>
+<dd><p>小奔电机按照设定的数值转动，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>left_power</em> 左轮电机的运动速度，参数范围 <code class="docutils literal notranslate"><span class="pre">-100</span> <span class="pre">~</span> <span class="pre">100</span></code>，负数代表左轮向后转动，正数代表左轮向前转动。</li>
+<li><em>right_power</em> 右轮电机的运动速度，参数范围 <code class="docutils literal notranslate"><span class="pre">-100</span> <span class="pre">~</span> <span class="pre">100</span></code>，负数代表右轮向后转动，正数代表右轮向前转动。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="rocky.turn_right_by_degree">
+<code class="descclassname">rocky.</code><code class="descname">turn_right_by_degree</code><span class="sig-paren">(</span><em>angle</em>, <em>speed = 40</em><span class="sig-paren">)</span><a class="headerlink" href="#rocky.turn_right_by_degree" title="Permalink to this definition">¶</a></dt>
+<dd><p>小奔按照设定的角度值右转，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>angle</em> 代表转动的角度，负数代表左转，正数代表右转。</li>
+<li><em>speed</em> 在何种速度下进行转弯，参数范围 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">100</span></code>； 如果不设置该参数，速度默认为40。（由于拐弯使用陀螺仪作为传感器，建议不要修改速度，避免转弯角度不准）</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="rocky.turn_left_by_degree">
+<code class="descclassname">rocky.</code><code class="descname">turn_left_by_degree</code><span class="sig-paren">(</span><em>angle</em>, <em>speed = 40</em><span class="sig-paren">)</span><a class="headerlink" href="#rocky.turn_left_by_degree" title="Permalink to this definition">¶</a></dt>
+<dd><p>小奔按照设定的角度值左转，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>angle</em> 代表转动的角度，负数代表右转，正数代表左转。</li>
+<li><em>speed</em> 在何种速度下进行转弯，参数范围 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">100</span></code>； 如果不设置该参数，速度默认为40。（由于拐弯使用陀螺仪作为传感器，建议不要修改速度，避免转弯角度不准）</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>程序示例：<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">codey</span>
+<span class="kn">import</span> <span class="nn">rocky</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">rocky</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">rocky</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="n">rocky</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">rocky</span><span class="o">.</span><span class="n">turn_left</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">rocky</span><span class="o">.</span><span class="n">turn_right</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">rocky</span><span class="o">.</span><span class="n">drive</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">rocky</span><span class="o">.</span><span class="n">turn_right_by_degree</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+    <span class="n">rocky</span><span class="o">.</span><span class="n">turn_right_by_degree</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="color&amp;ir sensor.html" class="btn btn-neutral float-right" title="color_ir_sensor — 颜色红外传感器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="小奔的python接口列表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2018, Damien P. George, Paul Sokolovsky, Yan Minge and contributors, Translators are meixiang dong, stephanie wu, eleven wang
+      Last updated on 03 Dec 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest/makeblock">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+        <dd><a href="//en/latest/micropython-makeblock.pdf">PDF</a></dd>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://www.micropython.org">micropython.org</a>
+        </dd>
+        <dd>
+          <a href="https://gitee.com/makeblockcc/micropython-api-doc">doc git</a>
+        </dd>
+    </dl>
+  </div>
+</div>
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

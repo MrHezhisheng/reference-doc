@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>程小奔的python接口 &mdash; makeblock micropython 文档说明 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="小程的python接口列表" href="codey/index.html" />
+    <link rel="prev" title="MicroPython documentation and references" href="../makeblock_index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> makeblock micropython 文档说明
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">程小奔的python接口</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">小程的python接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="codey/index.html">小程的python接口列表</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">小奔的python接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rocky/index.html">小奔的python接口列表</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">第三方类库的python接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Third-party-libraries/index.html">第三方类库的python接口列表</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">神经元扩展模块的python接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurons_modules/index.html">神经元扩展模块的python接口列表</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">程小奔的实例教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../library/index.html">microPython 官方类库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">microPython 语言介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genrst/index.html">microPython 和 python 的差异</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">microPython 许可证信息</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">makeblock micropython 文档说明</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>程小奔的python接口</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/codey&amp;rocky/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python">
+<span id="codey-rocky-micropython-lib"></span><h1>程小奔的python接口<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>本章介绍了程小奔的python接口，一共包含以下几类模块:</p>
+<ul class="simple">
+<li>小程的python接口：主要是指小程板载驱动的一些API接口。</li>
+<li>小奔的python接口：小程用于控制小奔运动或者获取小奔传感器数据的一些API接口。</li>
+<li>第三方类库的python接口：程小奔内置的一些第三方类库的接口类，例如mqtt、urequest的类。</li>
+<li>神经元扩展模块的python接口：程小奔扩展神经元模块时的一些API接口。</li>
+</ul>
+<div class="section" id="id1">
+<h2>小程的python接口<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>小程的python接口API如下：</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="codey/index.html">小程的python接口列表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="codey/RGB LED.html"><code class="docutils literal notranslate"><span class="pre">led</span></code> — 板载全彩LED灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/face panel.html"><code class="docutils literal notranslate"><span class="pre">display</span></code> — 表情面板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/speaker.html"><code class="docutils literal notranslate"><span class="pre">speaker</span></code> — 板载扬声器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/sound sensor.html"><code class="docutils literal notranslate"><span class="pre">sound_sensor</span></code> — 板载音量传感器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/light sensor.html"><code class="docutils literal notranslate"><span class="pre">light_sensor</span></code> — 板载光线传感器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/potentiometer.html"><code class="docutils literal notranslate"><span class="pre">potentiometer</span></code> — 板载电位器旋钮</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/button A.html"><code class="docutils literal notranslate"><span class="pre">button_a</span></code> — 板载按键A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/button B.html"><code class="docutils literal notranslate"><span class="pre">button_b</span></code> — 板载按键B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/button C.html"><code class="docutils literal notranslate"><span class="pre">button_c</span></code> — 板载按键C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/motion sensor.html"><code class="docutils literal notranslate"><span class="pre">motion_sensor</span></code> — 板载姿态传感器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/IR.html"><code class="docutils literal notranslate"><span class="pre">ir</span></code> — 板载红外收发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/wifi.html"><code class="docutils literal notranslate"><span class="pre">wifi</span></code> — 板载wifi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/battery.html"><code class="docutils literal notranslate"><span class="pre">battery</span></code> — 内置锂电池</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/counter.html"><code class="docutils literal notranslate"><span class="pre">codey_timer</span></code> — 计数器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/broadcast.html"><code class="docutils literal notranslate"><span class="pre">codey_broadcast</span></code> — 广播模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/external module detect.html"><code class="docutils literal notranslate"><span class="pre">codey_external_module_detect</span></code> — 模块接入检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/script control.html"><code class="docutils literal notranslate"><span class="pre">codey_script_control</span></code> — 脚本/线程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codey/event.html"><code class="docutils literal notranslate"><span class="pre">event</span></code> — 事件处理单元</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>小奔的python接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>小奔的python接口API如下：</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rocky/index.html">小奔的python接口列表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rocky/motion.html"><code class="docutils literal notranslate"><span class="pre">motion</span></code> — 小奔底盘移动</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rocky/color&amp;ir sensor.html"><code class="docutils literal notranslate"><span class="pre">color_ir_sensor</span></code> — 颜色红外传感器</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>第三方类库的python接口<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>第三方类库的python接口API如下：</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Third-party-libraries/index.html">第三方类库的python接口列表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Third-party-libraries/urequests.html"><code class="docutils literal notranslate"><span class="pre">urequests</span></code> — 网络请求模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Third-party-libraries/mqtt.html"><code class="docutils literal notranslate"><span class="pre">mqtt</span></code> — 消息队列遥测传输</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>神经元扩展模块的python接口<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>神经元扩展模块的python接口API如下：</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="neurons_modules/index.html">神经元扩展模块的python接口列表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/dual dc motor driver.html"><code class="docutils literal notranslate"><span class="pre">dc_motor_driver</span></code> — 双直流电机驱动模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/dual servo driver.html"><code class="docutils literal notranslate"><span class="pre">servo_driver</span></code> — 双舵机驱动模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/LED strip.html"><code class="docutils literal notranslate"><span class="pre">led_strip</span></code> — 灯带驱动模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/LED panel.html"><code class="docutils literal notranslate"><span class="pre">led_panel</span></code> — LED面板模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/buzzer.html"><code class="docutils literal notranslate"><span class="pre">buzzer</span></code> — 蜂鸣器模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/button.html"><code class="docutils literal notranslate"><span class="pre">button</span></code> — 按钮模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/funny touch.html"><code class="docutils literal notranslate"><span class="pre">funny_touch</span></code> — 触摸开关(四控)模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/ultrasonic sensor.html"><code class="docutils literal notranslate"><span class="pre">ultrasonic_sensor</span></code> — 超声波传感器模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/gyro sensor.html"><code class="docutils literal notranslate"><span class="pre">gyro_sensor</span></code> — 陀螺仪传感器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/PIR sensor.html"><code class="docutils literal notranslate"><span class="pre">pir_sensor</span></code> — 人体红外传感器模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurons_modules/soil moisture.html"><code class="docutils literal notranslate"><span class="pre">soil_moisture</span></code> — 土壤湿度传感器模块</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="codey/index.html" class="btn btn-neutral float-right" title="小程的python接口列表" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../makeblock_index.html" class="btn btn-neutral" title="MicroPython documentation and references" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2018, Damien P. George, Paul Sokolovsky, Yan Minge and contributors, Translators are meixiang dong, stephanie wu, eleven wang
+      Last updated on 03 Dec 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest/makeblock">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+        <dd><a href="//en/latest/micropython-makeblock.pdf">PDF</a></dd>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://www.micropython.org">micropython.org</a>
+        </dd>
+        <dd>
+          <a href="https://gitee.com/makeblockcc/micropython-api-doc">doc git</a>
+        </dd>
+    </dl>
+  </div>
+</div>
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

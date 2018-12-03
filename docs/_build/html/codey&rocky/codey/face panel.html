@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>display — 表情面板 &mdash; makeblock micropython 文档说明 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="speaker — 板载扬声器" href="speaker.html" />
+    <link rel="prev" title="led — 板载全彩LED灯" href="RGB LED.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> makeblock micropython 文档说明
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">程小奔的python接口</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id1">小程的python接口</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">小程的python接口列表</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="RGB LED.html"><code class="docutils literal notranslate"><span class="pre">led</span></code> — 板载全彩LED灯</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">display</span></code> — 表情面板</a></li>
+<li class="toctree-l4"><a class="reference internal" href="speaker.html"><code class="docutils literal notranslate"><span class="pre">speaker</span></code> — 板载扬声器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sound sensor.html"><code class="docutils literal notranslate"><span class="pre">sound_sensor</span></code> — 板载音量传感器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="light sensor.html"><code class="docutils literal notranslate"><span class="pre">light_sensor</span></code> — 板载光线传感器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="potentiometer.html"><code class="docutils literal notranslate"><span class="pre">potentiometer</span></code> — 板载电位器旋钮</a></li>
+<li class="toctree-l4"><a class="reference internal" href="button A.html"><code class="docutils literal notranslate"><span class="pre">button_a</span></code> — 板载按键A</a></li>
+<li class="toctree-l4"><a class="reference internal" href="button B.html"><code class="docutils literal notranslate"><span class="pre">button_b</span></code> — 板载按键B</a></li>
+<li class="toctree-l4"><a class="reference internal" href="button C.html"><code class="docutils literal notranslate"><span class="pre">button_c</span></code> — 板载按键C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="motion sensor.html"><code class="docutils literal notranslate"><span class="pre">motion_sensor</span></code> — 板载姿态传感器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IR.html"><code class="docutils literal notranslate"><span class="pre">ir</span></code> — 板载红外收发</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wifi.html"><code class="docutils literal notranslate"><span class="pre">wifi</span></code> — 板载wifi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="battery.html"><code class="docutils literal notranslate"><span class="pre">battery</span></code> — 内置锂电池</a></li>
+<li class="toctree-l4"><a class="reference internal" href="counter.html"><code class="docutils literal notranslate"><span class="pre">codey_timer</span></code> — 计数器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="broadcast.html"><code class="docutils literal notranslate"><span class="pre">codey_broadcast</span></code> — 广播模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="external module detect.html"><code class="docutils literal notranslate"><span class="pre">codey_external_module_detect</span></code> — 模块接入检测</a></li>
+<li class="toctree-l4"><a class="reference internal" href="script control.html"><code class="docutils literal notranslate"><span class="pre">codey_script_control</span></code> — 脚本/线程控制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="event.html"><code class="docutils literal notranslate"><span class="pre">event</span></code> — 事件处理单元</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id2">小奔的python接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id3">第三方类库的python接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id4">神经元扩展模块的python接口</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">程小奔的实例教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../library/index.html">microPython 官方类库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">microPython 语言介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genrst/index.html">microPython 和 python 的差异</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">microPython 许可证信息</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">makeblock micropython 文档说明</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">程小奔的python接口</a> &raquo;</li>
+        
+          <li><a href="index.html">小程的python接口列表</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">display</span></code> — 表情面板</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/codey&amp;rocky/codey/face panel.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-display">
+<span id="display"></span><h1><a class="reference internal" href="#module-display" title="display: 表情面板"><code class="xref py py-mod docutils literal notranslate"><span class="pre">display</span></code></a> — 表情面板<a class="headerlink" href="#module-display" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">display</span></code> 模块的主要功能与函数</p>
+<div class="section" id="id1">
+<h2>表情面板显示说明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/1.png" src="../../_images/1.png" />
+<p>如上图所示，表情面板以左上角为坐标 0 点， x ，y 的方向如箭头示意。显示图片参数时，以上图为例，其第一列数据，上面的三个是点亮的，在数据转换时，这个数据转换为 <code class="docutils literal notranslate"><span class="pre">11100000</span></code>， 即 16进制 0xe0，同样的，第二列数据转换为 <code class="docutils literal notranslate"><span class="pre">00001101</span></code>，即 16进制的 0x0d，上图的全部点阵转换为图片参数时，是 <code class="docutils literal notranslate"><span class="pre">e00d0000000000000000000000000000</span></code>。</p>
+</div>
+<div class="section" id="id2">
+<h2>功能相关函数<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="display.show_image">
+<code class="descclassname">display.</code><code class="descname">show_image</code><span class="sig-paren">(</span><em>image</em>, <em>pos_x = 0</em>, <em>pos_y = 0</em>, <em>time_s = None</em><span class="sig-paren">)</span><a class="headerlink" href="#display.show_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>以图片参数的方式显示自定义的点阵图形，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>image</em> 字符串数据，点阵的每一列有8个显示点，为1 byte的数据，转换为16进制的字符串, 因此16列点阵，需要用 32 个字符串数据来表示。</li>
+<li><em>pos_x</em> 显示图形在表情面板上x轴的偏移量，参数范围是 <code class="docutils literal notranslate"><span class="pre">-15</span> <span class="pre">~</span> <span class="pre">15</span></code>，如果不设置该参数，默认从 0位置开始。</li>
+<li><em>pos_y</em> 显示图形在表情面板上y轴的偏移量，参数范围是 <code class="docutils literal notranslate"><span class="pre">-7</span> <span class="pre">~</span> <span class="pre">7</span></code>，如果不设置该参数，默认从 0位置开始。</li>
+<li><em>time_s</em> 显示暂留的时间(以秒为单位)，如果没有设置该参数，在有清屏或者重新设置表情面板操作之前，维持显示不变。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="display.show">
+<code class="descclassname">display.</code><code class="descname">show</code><span class="sig-paren">(</span><em>var</em>, <em>pos_x = 0</em>, <em>pos_y = 0</em>, <em>wait = True</em><span class="sig-paren">)</span><a class="headerlink" href="#display.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>以全类型的数据参数方式显示数据，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>var</em> 全类型， 其中数值型和时间类型的显示会做特殊处理，时间格式显示需满足： <code class="docutils literal notranslate"><span class="pre">[x]x:[x]x</span></code> 格式 (正则表达式 <code class="docutils literal notranslate"><span class="pre">\d?\d:\d\d?</span></code>)。</li>
+<li><em>pos_x</em> 显示数据在表情面板上x轴的偏移量，参数范围是 <code class="docutils literal notranslate"><span class="pre">-15</span> <span class="pre">~</span> <span class="pre">15</span></code>，如果不设置该参数，默认从 0位置开始。</li>
+<li><em>pos_y</em> 显示数据在表情面板上y轴的偏移量，参数范围是 <code class="docutils literal notranslate"><span class="pre">-7</span> <span class="pre">~</span> <span class="pre">7</span></code>，如果不设置该参数，默认从 0位置开始。</li>
+<li><em>wait</em> 设置是否阻塞显示，其中 <code class="docutils literal notranslate"><span class="pre">True</span></code>：表示阻塞直到显示完毕， <code class="docutils literal notranslate"><span class="pre">False</span></code>：表示显示但不阻塞。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="display.set_pixel">
+<code class="descclassname">display.</code><code class="descname">set_pixel</code><span class="sig-paren">(</span><em>pos_x</em>, <em>pos_y</em>, <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#display.set_pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>设置表情面板单个像素点的亮灭状态，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>pos_x</em> 像素点在表情面板上x轴的坐标，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">15</span></code>。</li>
+<li><em>pos_y</em> 像素点在表情面板上y轴的坐标，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">7</span></code>。</li>
+<li><em>status</em> 布尔值，其中 <code class="docutils literal notranslate"><span class="pre">True</span></code>：表示像素点亮， <code class="docutils literal notranslate"><span class="pre">False</span></code>：表示像素熄灭。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="display.get_pixel">
+<code class="descclassname">display.</code><code class="descname">get_pixel</code><span class="sig-paren">(</span><em>pos_x</em>, <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#display.get_pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>获得表情面板上单个像素点当前的亮灭状态，返回值是布尔值，其中 <code class="docutils literal notranslate"><span class="pre">True</span></code>：表示像素点亮， <code class="docutils literal notranslate"><span class="pre">False</span></code>：表示像素熄灭，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>pos_x</em> 像素点在表情面板上x轴的坐标，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">15</span></code>。</li>
+<li><em>pos_y</em> 像素点在表情面板上y轴的坐标，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">7</span></code>。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="display.toggle_pixel">
+<code class="descclassname">display.</code><code class="descname">toggle_pixel</code><span class="sig-paren">(</span><em>pos_x</em>, <em>pos_y</em><span class="sig-paren">)</span><a class="headerlink" href="#display.toggle_pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>切换表情面板上单个像素点当前的亮灭状态，参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>pos_x</em> 像素点在表情面板上x轴的坐标，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">15</span></code>。</li>
+<li><em>pos_y</em> 像素点在表情面板上y轴的坐标，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">7</span></code>。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="display.clear">
+<code class="descclassname">display.</code><code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#display.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>熄灭表情面板上全部的灯。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>程序示例：<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">codey</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;ffffff&quot;</span><span class="p">)</span>
+<span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="s2">&quot;ffffffffff000000000000000000000000&quot;</span>
+<span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">pos_x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">pos_y</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;[1, 1]:&quot;</span><span class="p">,</span> <span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">get_pixel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;12:28&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">toggle_pixel</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">codey</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">toggle_pixel</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="speaker.html" class="btn btn-neutral float-right" title="speaker — 板载扬声器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="RGB LED.html" class="btn btn-neutral" title="led — 板载全彩LED灯" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2018, Damien P. George, Paul Sokolovsky, Yan Minge and contributors, Translators are meixiang dong, stephanie wu, eleven wang
+      Last updated on 03 Dec 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest/makeblock">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+        <dd><a href="//en/latest/micropython-makeblock.pdf">PDF</a></dd>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://www.micropython.org">micropython.org</a>
+        </dd>
+        <dd>
+          <a href="https://gitee.com/makeblockcc/micropython-api-doc">doc git</a>
+        </dd>
+    </dl>
+  </div>
+</div>
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

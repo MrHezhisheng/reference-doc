@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>led_strip — 灯带驱动模块 &mdash; makeblock micropython 文档说明 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="led_panel — LED面板模块" href="LED panel.html" />
+    <link rel="prev" title="servo_driver — 双舵机驱动模块" href="dual servo driver.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> makeblock micropython 文档说明
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">程小奔的python接口</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id1">小程的python接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id2">小奔的python接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id3">第三方类库的python接口</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id4">神经元扩展模块的python接口</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">神经元扩展模块的python接口列表</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dual dc motor driver.html"><code class="docutils literal notranslate"><span class="pre">dc_motor_driver</span></code> — 双直流电机驱动模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dual servo driver.html"><code class="docutils literal notranslate"><span class="pre">servo_driver</span></code> — 双舵机驱动模块</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">led_strip</span></code> — 灯带驱动模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LED panel.html"><code class="docutils literal notranslate"><span class="pre">led_panel</span></code> — LED面板模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="buzzer.html"><code class="docutils literal notranslate"><span class="pre">buzzer</span></code> — 蜂鸣器模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="button.html"><code class="docutils literal notranslate"><span class="pre">button</span></code> — 按钮模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="funny touch.html"><code class="docutils literal notranslate"><span class="pre">funny_touch</span></code> — 触摸开关(四控)模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ultrasonic sensor.html"><code class="docutils literal notranslate"><span class="pre">ultrasonic_sensor</span></code> — 超声波传感器模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gyro sensor.html"><code class="docutils literal notranslate"><span class="pre">gyro_sensor</span></code> — 陀螺仪传感器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PIR sensor.html"><code class="docutils literal notranslate"><span class="pre">pir_sensor</span></code> — 人体红外传感器模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="soil moisture.html"><code class="docutils literal notranslate"><span class="pre">soil_moisture</span></code> — 土壤湿度传感器模块</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">程小奔的实例教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../library/index.html">microPython 官方类库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">microPython 语言介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genrst/index.html">microPython 和 python 的差异</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">microPython 许可证信息</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">makeblock micropython 文档说明</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">程小奔的python接口</a> &raquo;</li>
+        
+          <li><a href="index.html">神经元扩展模块的python接口列表</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">led_strip</span></code> — 灯带驱动模块</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/codey&amp;rocky/neurons_modules/LED strip.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-led_strip">
+<span id="led-strip"></span><h1><a class="reference internal" href="#module-led_strip" title="led_strip: 灯带驱动模块"><code class="xref py py-mod docutils literal notranslate"><span class="pre">led_strip</span></code></a> — 灯带驱动模块<a class="headerlink" href="#module-led_strip" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">led_strip</span></code> 模块的主要功能与函数</p>
+<div class="section" id="id1">
+<h2>功能相关函数<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="led_strip.set_single">
+<code class="descclassname">led_strip.</code><code class="descname">set_single</code><span class="sig-paren">(</span><em>index</em>, <em>red_value</em>, <em>green_value</em>, <em>blue_value</em><span class="sig-paren">)</span><a class="headerlink" href="#led_strip.set_single" title="Permalink to this definition">¶</a></dt>
+<dd><p>设置灯带上单个灯的颜色, 参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>index</em> 设置第几个灯，参数范围是 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">~</span> <span class="pre">灯带的最大灯珠数目</span></code>。</li>
+<li><em>red_value</em> 全彩LED红色分量的数值，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">255</span></code>， 0为无红色分量，255是红色分量最亮。</li>
+<li><em>green_value</em> 全彩LED绿色分量的数值，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">255</span></code>， 0为无绿色分量，255是绿色分量最亮。</li>
+<li><em>blue_value</em> 全彩LED蓝色分量的数值，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">255</span></code>， 0为无蓝色分量，255是蓝色分量最亮。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="led_strip.set_all">
+<code class="descclassname">led_strip.</code><code class="descname">set_all</code><span class="sig-paren">(</span><em>red_value</em>, <em>green_value</em>, <em>blue_value</em><span class="sig-paren">)</span><a class="headerlink" href="#led_strip.set_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>设置全部灯带的颜色, 参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>red_value</em> 全彩LED红色分量的数值，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">255</span></code>， 0为无红色分量，255是红色分量最亮。</li>
+<li><em>green_value</em> 全彩LED绿色分量的数值，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">255</span></code>， 0为无绿色分量，255是绿色分量最亮。</li>
+<li><em>blue_value</em> 全彩LED蓝色分量的数值，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">255</span></code>， 0为无蓝色分量，255是蓝色分量最亮。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="led_strip.set_effect">
+<code class="descclassname">led_strip.</code><code class="descname">set_effect</code><span class="sig-paren">(</span><em>mode</em>, <em>speed</em>, <em>list</em><span class="sig-paren">)</span><a class="headerlink" href="#led_strip.set_effect" title="Permalink to this definition">¶</a></dt>
+<dd><p>设置灯条的灯效，参数：</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>mode</em> 灯效的模式，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">5</span></code>，其中</p>
+<p>0： 表示静态模式，按设定的颜色点亮前N个灯，未设置的灯珠处于熄灭状态。</p>
+<p>1： 表示滚动模式，按设定的颜色点亮前N个灯，按设定动态变化速度，N个灯图案，向后滚动，每次滚动一个灯，循环滚动。如下图：</p>
+<img alt="../../_images/21.png" src="../../_images/21.png" />
+<p>2： 表示重复模式，按设定的颜色点亮前N个灯，后面的灯重复前面N个灯的效果，直到最后一个灯。如下图：</p>
+<img alt="../../_images/3.png" src="../../_images/3.png" />
+<p>3： 表示跑马灯模式，重复的效果加上动态变化，按设定的动态变化速度，N个灯循环挪动。如下图：</p>
+<img alt="../../_images/4.png" src="../../_images/4.png" />
+<p>4： 表示呼吸灯模式，呼吸灯的变化速度按人的呼吸频率3秒1次。</p>
+<p>5： 表示渐变模式，整条灯带从原来的颜色渐变到新设定的颜色，变化间隔时间可设定。</p>
+</li>
+<li><p class="first"><em>speed</em> 动态变化速度，参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">8</span></code>，0最慢，8最快。(只针对有动态变化的灯效的设置)。</p>
+</li>
+<li><p class="first"><em>list</em> 可变参数列表，每个数值的参数范围是 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">~</span> <span class="pre">8</span></code>，第1个参数表示第一个灯的颜色，第2个参数表示第二个灯的颜色…，颜色的参数如下：  <code class="docutils literal notranslate"><span class="pre">黑(0x00)</span></code>，<code class="docutils literal notranslate"><span class="pre">红(0x01)</span></code>，<code class="docutils literal notranslate"><span class="pre">橙(0x02)</span></code>，<code class="docutils literal notranslate"><span class="pre">黄(0x03)</span></code>，<code class="docutils literal notranslate"><span class="pre">绿(0x04)</span></code>，<code class="docutils literal notranslate"><span class="pre">青(0x05)</span></code>，<code class="docutils literal notranslate"><span class="pre">蓝(0x06)</span></code>，<code class="docutils literal notranslate"><span class="pre">紫(0x07)</span></code>，<code class="docutils literal notranslate"><span class="pre">白(0x08)</span></code>。</p>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>程序示例：<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">codey</span>
+<span class="kn">import</span> <span class="nn">neurons</span>
+<span class="kn">import</span> <span class="nn">event</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_all</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nd">@event.button_a_pressed</span>
+<span class="k">def</span> <span class="nf">on_button_a_pressed</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;button a event successed&quot;</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_all</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_single</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_all</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_single</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_all</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_single</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nd">@event.button_b_pressed</span>
+<span class="k">def</span> <span class="nf">on_button_b_pressed</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;button b event successed&quot;</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nd">@event.button_c_pressed</span>
+<span class="k">def</span> <span class="nf">on_button_c_pressed</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;button c event successed&quot;</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">neurons</span><span class="o">.</span><span class="n">led_strip</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="LED panel.html" class="btn btn-neutral float-right" title="led_panel — LED面板模块" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dual servo driver.html" class="btn btn-neutral" title="servo_driver — 双舵机驱动模块" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2018, Damien P. George, Paul Sokolovsky, Yan Minge and contributors, Translators are meixiang dong, stephanie wu, eleven wang
+      Last updated on 03 Dec 2018.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest/makeblock">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+        <dd><a href="//en/latest/micropython-makeblock.pdf">PDF</a></dd>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://www.micropython.org">micropython.org</a>
+        </dd>
+        <dd>
+          <a href="https://gitee.com/makeblockcc/micropython-api-doc">doc git</a>
+        </dd>
+    </dl>
+  </div>
+</div>
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
