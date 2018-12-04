@@ -46,3 +46,12 @@
    :maxdepth: 2
 
    neurons_modules/index.rst
+
+mbot的python接口
+------------------------------
+mbot的python接口API如下：
+
+.. toctree::
+   :maxdepth: 2
+
+   mbot/index.rst
