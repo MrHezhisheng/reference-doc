@@ -6,6 +6,8 @@ MicroPython documentation and references
     codey&rocky/tutorial.rst
     mbot/index.rst
     mbot/tutorial.rst 
+    haloboard/index.rst
+    haloboard/tutorial.rst 
     library/index.rst
     reference/index.rst
     genrst/index.rst
